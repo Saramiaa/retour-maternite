@@ -1,0 +1,23 @@
+<?php if ($error != null){?>
+  <p><?= $error ?></p>
+<?php } ?>
+
+
+<div class="container">
+
+<h3>Connectez-vous !</h3>
+
+<form action="<?=$requestUrl?>/user/login" method="POST">
+
+<label for="email">
+Votre Adresse E-mail :</label>
+<input type="email" name="email" placeholder="email">
+
+Votre Mot de passe :
+<input type="password" name="password" placeholder="password">
+
+<input type="submit" value="Connexion">
+
+</form>
+
+</div>
