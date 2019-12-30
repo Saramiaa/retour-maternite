@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<h2>Liste des personnes inscritent</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Date de naissance</th>
+      <th scope="col">Email</th>
+      <th scope="col">Numéro de téléphone</th>
+      <th scope="col">Adresse Postale</th>
+      <th scope="col">Date d'inscription</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($users as $user) {?>
+      <tr>
+        <td scope="row"><?=$user['Id']?></td>
+        <td><?=$user['LastName']?></td>
+        <td><?=$user['FirstName']?></td>
+        <td><?=$user['Email']?></td>
+        <td><?=$user['Birthday']?></td>
+        <td>(0)<?=$user['Phone']?></td>
+        <td><?=$user['Adress']?> <br>  <?=$user['Zip']?> <?=$user['City']?> <br> <?=$user['Country']?> </td>
+        <td><?=$user['CreationTimeStamp']?></td>
+      </tr>
+    <?php }?>
+  </tbody>
+</table>

@@ -1,0 +1,49 @@
+body {
+  background-image: url(../images/prestation/bebe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
+.article-flex {
+  background-color: white;
+  width: 32%;
+}
+
+.inside img{
+  width: 308px;
+}
+
+.main-article-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 30px;
+
+}
+
+.article-flex h2 {
+  width: 100%;
+}
+
+.inside {
+  text-align: center;
+  padding: 20px;
+}
+
+.inside h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 1px solid #8b0026;
+}
+
+.infos {
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
