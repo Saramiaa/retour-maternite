@@ -6,5 +6,5 @@
 
 
 $config['dsn']      = 'mysql:host=localhost;dbname=mon_coach';
-$config['password'] = 'troiswa';
+$config['password'] = '';
 $config['user']     = 'root';
