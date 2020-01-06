@@ -14,11 +14,7 @@ class AdminController
 
       $users = $userModel->getAllUsers();
 
-<<<<<<< HEAD
-      // var_dump($users);
-=======
-      var_dump($users);
->>>>>>> cd9907ce01b9cc906351658d214842debc1e9d66
+
 
     return [
       // for each pour Affichage
