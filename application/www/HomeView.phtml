@@ -34,9 +34,15 @@
 <main class="container">
   <div class="main-header">
     <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
-      <p>Bienvenue sur Retour Maternité !</p>
+      <p class="bienvenue">Bienvenue sur Retour Maternité !</p>
+      <div class="reservation">
+        <p>Reservez votre nuit maintenant ! </p>
+        <a href="<?= $requestUrl ?>/user/register">Inscrivez vous !</a>
+        <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
+      </div>
     <?php } else { ?>
-      <p>Soyez la Bienvenue <?= $_SESSION['firstName'] ?></p>
+      <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
+      <a  href="<?= $requestUrl ?>/reservation">Je reserve ma nuit ici !</a>
     <?php } ?>
   </div>
 
@@ -51,10 +57,10 @@
 
 
 
-    <div class="special-btn">
+    <!-- <div class="special-btn">
 
       <a href="#">Voir portraits <i class="fas fa-baby-carriage"></i></a>
-    </div>
+    </div> -->
 
     <!-- Image Hover -->
     <div class="overlay-image">

@@ -60,6 +60,33 @@ a {
   color:  #8b0026;
 }
 
+.bienvenue {
+  text-align: center;
+  font-size: 32px;
+}
+
+.reservation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.reservation p {
+  margin: 0;
+  padding: 10px;
+}
+
+.reservation a {
+  background: antiquewhite;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+#Connexion {
+  color:  antiquewhite;
+  background-color: #8b0026;
+}
+
 
 /* NAV BAR fixed --------------------------------------------------------------------------------------------*/
 

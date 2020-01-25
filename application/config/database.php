@@ -5,6 +5,6 @@
  */
 
 
-$config['dsn']      = 'mysql:host=localhost;dbname=mon_coach';
-$config['password'] = 'troiswa';
+$config['dsn']      = 'mysql:host=localhost;dbname=booking';
+$config['password'] = '';
 $config['user']     = 'root';
