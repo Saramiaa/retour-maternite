@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/reservation.css">
 
 
 <form>
@@ -8,27 +8,22 @@
     <input type="text" class="form-control" id="lieu">
   </div>
 
-  <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker3'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-            });
-        </script>
-    </div>
 </div>
 
+
+<label for="date">Je choisi la date à laquelle je souhaiterais une nurse</label>
+<input type="date" name="date" id="dateofbirth">
+
+<p>Pour quel moment avez vous besoin d'une garde ? :</p>
+
+<div>
+  <input type="checkbox" id="jour" name="jour">
+  <label for="jour">La journée</label>
+</div>
+
+<div>
+  <input type="checkbox" id="nuit" name="nuit">
+  <label for="nuit">La soirée / Nuit</label>
+</div>
 
 </form>
