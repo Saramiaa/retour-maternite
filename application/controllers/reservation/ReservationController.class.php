@@ -33,5 +33,7 @@ class ReservationController
 
        $reservation->saveReservation($_POST);
 
+       $http->redirectTo('/');
+
     }
 }

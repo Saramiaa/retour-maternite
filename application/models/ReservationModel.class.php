@@ -13,7 +13,7 @@ class ReservationModel {
     $database->executeSql($sql,[
 
       $post['day'],
-      intval($post['hour']),
+      strval($post['hour']),
       $post['adress'],
       $post['city'],
 
