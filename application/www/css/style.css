@@ -25,6 +25,11 @@ img {
   margin-left: auto;
   background-color: white;
   border-radius: 10px;
+  position:relative;
+}
+
+.other-cont {
+  margin-top: 120px;
 }
 
 .ctn-color {
@@ -188,7 +193,7 @@ ul a:hover {
 
   width: auto;
   height: auto;
-  margin-top: 170px;
+  margin-top: 116px;
 }
 
 .main-title{
@@ -197,7 +202,7 @@ ul a:hover {
   padding: 15px;
   background-color: white;
   padding: 0;
-  font-size: 60px;
+  font-size: 45px;
 }
 
 .main-title::first-letter {
@@ -205,6 +210,18 @@ ul a:hover {
 }
 
 /* BODY ----------------------------------------------------*/
+
+.main-header {
+
+    background-color:white;
+    position: absolute;
+    left: 103px;
+    top: -162px;
+    padding: 0 15px;
+    padding-bottom: 15PX;
+    border-radius: 10px;
+
+}
 
 h2 {
   font-size: 40px;

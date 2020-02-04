@@ -109,7 +109,7 @@ class UserModel {
 
       return $database->queryOne($sql, [$id]);
     }
-    
+
 
   }
 

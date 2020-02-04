@@ -1,29 +1,36 @@
 <link rel="stylesheet" href="<?= $wwwUrl ?>/css/reservation.css">
 
+<div class="container other-cont">
 
-<form>
-
-  <div class="form-group">
-    <label for="lieu">Lieu de la garde</label>
-    <input type="text" class="form-control" id="lieu">
-  </div>
-
-</div>
+	<h3>Reserver une garde !</h3>
 
 
-<label for="date">Je choisi la date à laquelle je souhaiterais une nurse</label>
-<input type="date" name="date" id="dateofbirth">
+	<form action="<?=$requestUrl?>/reservation" method="POST">
 
-<p>Pour quel moment avez vous besoin d'une garde ? :</p>
+		<ul>
+			<li>
+				<label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
+			  <input type="date" name="day" id="dateofbirth">
+			</li>
 
-<div>
-  <input type="checkbox" id="jour" name="jour">
-  <label for="jour">La journée</label>
-</div>
+			<li>
+				<label for="adress">Adresse Postale</label>
+				<input type="text" name="adress" id="adress">
+			</li>
 
-<div>
-  <input type="checkbox" id="nuit" name="nuit">
-  <label for="nuit">La soirée / Nuit</label>
-</div>
+			<li>
+				<label for="lieu">Ville</label>
+				<input type="text" name="city" id="lieu">
+			</li>
+
+			<li>
+				<label for="hour">Horaire de la garde</label>
+			  <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
+			</li>
+		</ul>
+		
+	<input class="form-control" type="submit" value="Enregister">
 
 </form>
+
+</div>

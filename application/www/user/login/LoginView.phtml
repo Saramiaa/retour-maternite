@@ -3,18 +3,24 @@
 <?php } ?>
 
 
-<div class="container">
+<div class="container other-cont">
 
 <h3>Connectez-vous !</h3>
 
 <form action="<?=$requestUrl?>/user/login" method="POST">
 
-<label for="email">
-Votre Adresse E-mail :</label>
-<input type="email" name="email" placeholder="email">
+<ul>
+  <li>
+    <label for="email">
+    Votre Adresse E-mail :</label>
+    <input type="email" name="email" placeholder="email">
+  </li>
 
-Votre Mot de passe :
-<input type="password" name="password" placeholder="password">
+  <li>
+    Votre Mot de passe :
+    <input type="password" name="password" placeholder="password">
+  </li>
+</ul>
 
 <input type="submit" value="Connexion">
 
