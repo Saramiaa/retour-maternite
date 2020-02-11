@@ -17,6 +17,7 @@
       <th scope="col">Numéro de téléphone</th>
       <th scope="col">Adresse Postale</th>
       <th scope="col">Date d'inscription</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,9 @@
         <td>(0)<?=$user['Phone']?></td>
         <td><?=$user['Adress']?> <br>  <?=$user['Zip']?> <?=$user['City']?> <br> <?=$user['Country']?> </td>
         <td><?=$user['CreationTimeStamp']?></td>
+        <td>
+          <button type="button" name="button">Supprimer</button>
+        </td>
       </tr>
     <?php }?>
   </tbody>
