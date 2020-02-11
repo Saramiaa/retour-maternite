@@ -19,5 +19,15 @@ class ReservationModel {
 
     ]);  }
 
+    public function showReservation() {
+      $database = new Database();
+
+      $sql = 'SELECT * FROM `reservation`
+              INNER JOIN users ON users.Id = reservation.User_Id';
+
+      return $database->query($sql, []);
+    }
+
+  
   }
 ?>

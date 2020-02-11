@@ -10,10 +10,10 @@
       <p class="main-title">Garde de Jour / Nuit à Domicile</p><br>
       <p class="main-title">Nouveaux Nés, Jumeaux</p>
     </div>
-    <div class="slick-me">
+    <!-- <div class="slick-me">
       <p class="main-title">Peut faire ses Nuits !</p><br>
       <p class="main-title">C'est Possible !</p>
-    </div>
+    </div> -->
     <div class="slick-me">
       <p class="main-title">Retour-Maternité.com</p><br>
       <p class="main-title">Professionnelles Dimplômées</p><br>
@@ -34,55 +34,41 @@
 
 <!-- ACCUEIL USER -->
 <main class="container">
-  <div class="main-header">
-    <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
-      <p class="bienvenue">Bienvenue sur Retour Maternité !</p>
-      <div class="reservation">
-        <p>Reservez votre nuit maintenant ! </p>
-        <a href="<?= $requestUrl ?>/user/register">Inscrivez vous !</a>
-        <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
-      </div>
-    <?php } else { ?>
-      <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
-      <div class="container ">
-
-      	<h3>Reserver une garde !</h3>
-
-
-      	<form action="<?=$requestUrl?>/reservation" method="POST">
-
-      		<ul>
-      			<li>
-      				<label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
-      			  <input type="date" name="day" id="dateofbirth">
-
-              <label for="adress">Adresse Postale</label>
-              <input type="text" name="adress" id="adress">
-      			</li>
-
-      		
-
-      			<li>
-      				<label for="lieu">Ville</label>
-      				<input type="text" name="city" id="lieu">
-      			</li>
-
-      			<li>
-      				<label for="hour">Horaire de la garde</label>
-      			  <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
-      			</li>
-      		</ul>
-
-      	<input class="form-control" type="submit" value="Enregister">
-
-      </form>
-
-      </div>
-    <?php } ?>
-  </div>
 
   <!-- QUI SOMMES NOUS -->
   <section class="container-text">
+    <div class="main-header">
+        <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
+          <h3>Reservez votre nuit maintenant ! </h3>
+          <div class="reservation">
+            <a href="<?= $requestUrl ?>/user/register">Inscrivez vous !</a>
+            <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
+          </div>
+        <?php } else { ?>
+          <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
+          <div class="">
+            <h3>Reserver une garde !</h3>
+            <form action="<?=$requestUrl?>/reservation" method="POST">
+
+              <label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
+              <input type="date" name="day" id="dateofbirth">
+
+              <label for="adress">Adresse Postale</label>
+              <input type="text" name="adress" id="adress">
+
+              <label for="lieu">Ville</label>
+              <input type="text" name="city" id="lieu">
+
+              <label for="hour">Horaire de la garde</label>
+              <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
+
+              <input class="form-control" type="submit" value="Enregister">
+            </form>
+          </div>
+        <?php } ?>
+      </div>
+    <div class="container">
+    </div>
     <h2>Qui sommes nous ? <i class="fas fa-feather-alt"></i></h2>
     <hr>
     <p>Diplômées <strong>Infirmières Puéricultrices, Auxiliaires de puériculture</strong> ou encore titulaires d'un CAP Petite Enfance, nous avons suivi un parcours professionnel en milieu hospitalier presque <strong>exclusivement</strong> auprès <strong>des nouveaux nés.</strong> </p>

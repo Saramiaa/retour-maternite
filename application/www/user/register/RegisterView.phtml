@@ -1,10 +1,12 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/register.css">
+
 <div class="container other-cont">
 
-	<h3>Enregistrez vous !</h3>
+	<h3 >Enregistrez vous !</h3>
 
 	<form class="" action="<?=$requestUrl?>/user/register" method="POST">
 
-		<ul>
+		<ul class="register">
 			<li>
 				<label for="Firstname">Votre prénom :</label>
 				<input class="form-control" type="text" name="firstname" placeholder="Prénom" id="Firstname">
@@ -56,6 +58,9 @@
 			</li>
 		</ul>
 		<br>
-		<input class="form-control" type="submit" value="Enregister">
+		<div class="sub">
+
+			<input class="form-control" type="submit" value="Enregister">
+		</div>
 	</form>
 </div

@@ -1,0 +1,20 @@
+.register li {
+  padding: 10px;
+}
+
+.register input {
+  border-radius: 25px;
+  margin-left: 13px;
+  padding: 3px;
+}
+
+.sub {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.sub input {
+  padding: 10px;
+  border-radius: 25px;
+
+}

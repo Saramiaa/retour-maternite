@@ -51,7 +51,12 @@
     <li><a href="<?= $requestUrl ?>/user/register">Inscription</a></li>
   <?php } else {?>
     <?php if($_SESSION['role'] === "admin"){ ?>
-      <li><a href="<?= $requestUrl ?>/admin">Admin</a><?php } ?></li>
+      <li><a href="<?= $requestUrl ?>/admin" class="admin">Admin</a>
+
+      <a href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a>
+      <?php } ?></li>
+
+
       <li><a href="<?= $requestUrl ?>/user/profil">Mon profil</a></li>
       <li><a href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
     <?php } ?>
