@@ -45,26 +45,33 @@
             <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
           </div>
         <?php } else { ?>
-          <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
-          <div class="">
-            <h3>Reserver une garde !</h3>
-            <form action="<?=$requestUrl?>/reservation" method="POST">
+          <?php if($_SESSION['role'] === "user"){ ?>
+            <section class="test">
+              <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
+              <div class="reservation-user">
+                <h3>Reserver une garde !</h3>
+                <form action="<?=$requestUrl?>/reservation" method="POST">
 
-              <label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
-              <input type="date" name="day" id="dateofbirth">
+                  <label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
+                  <input type="date" name="day" id="dateofbirth">
 
-              <label for="adress">Adresse Postale</label>
-              <input type="text" name="adress" id="adress">
+                  <label for="adress">Adresse Postale</label>
+                  <input type="text" name="adress" id="adress">
 
-              <label for="lieu">Ville</label>
-              <input type="text" name="city" id="lieu">
+                  <label for="lieu">Ville</label>
+                  <input type="text" name="city" id="lieu">
 
-              <label for="hour">Horaire de la garde</label>
-              <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
+                  <label for="hour">Horaire de la garde</label>
+                  <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
 
-              <input class="form-control" type="submit" value="Enregister">
-            </form>
-          </div>
+                  <input class="form-control" type="submit" value="Enregister">
+                </form>
+              </div>
+            </section>
+
+          <?php } ?>
+
+          <p>test admin</p>
         <?php } ?>
       </div>
     <div class="container">

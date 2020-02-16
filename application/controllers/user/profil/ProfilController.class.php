@@ -30,7 +30,7 @@ class ProfilController
 
     $user->changeUserProfil($_POST, $_SESSION['id']);
 
-    // $http->redirectTo('/user/profil');
+    $http->redirectTo('/user/profil');
     var_dump($_POST);
 
   }

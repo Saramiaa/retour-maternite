@@ -39,6 +39,12 @@ class ReservationModel {
 
     }
 
-    
+    public function getAllOrdersByUser($userId) {
+      $database = new Database();
+      $sql = "SELECT * FROM orders WHERE User_Id=?";
+      return $database->query($sql, [ $userId ]);
+    }
+
+
   }
   ?>
