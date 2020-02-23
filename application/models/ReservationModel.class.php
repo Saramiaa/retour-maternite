@@ -8,14 +8,12 @@ class ReservationModel {
 
     $userId = $_SESSION['id'];
 
-    $sql = "INSERT INTO `reservation` (Day, Hour, Location, City, User_Id) VALUES ( ?, ?, ?, ?, $userId )";
+    $sql = "INSERT INTO `reservation` (Day, Hour, User_Id) VALUES ( ?, ?, $userId )";
 
     $database->executeSql($sql,[
 
       $post['day'],
       strval($post['hour']),
-      $post['adress'],
-      $post['city'],
 
     ]);  }
 
@@ -39,9 +37,9 @@ class ReservationModel {
 
     }
 
-    public function getAllOrdersByUser($userId) {
+    public function getReservationByUser($userId) {
       $database = new Database();
-      $sql = "SELECT * FROM orders WHERE User_Id=?";
+      $sql = "SELECT * FROM reservation WHERE User_Id=?";
       return $database->query($sql, [ $userId ]);
     }
 

@@ -15,11 +15,21 @@ class ProfilController
       $http->redirectTo('/');
     }
 
+
     $userModel = new UserModel();
+    $reservationModel = new ReservationModel();
+    // $id = $_GET['Id'];
+
     $user = $userModel->getOneUser($_SESSION['id']);
+    $reservation = $reservationModel-> getReservationByUser($_SESSION['id']);
+
+    // $reservationModel->deleteReservation($id);
+
+    // var_dump($reservation);
 
     return [
-      "user"=>$user
+      "user"=>$user,
+      "reservation"=>$reservation
     ];
   }
 

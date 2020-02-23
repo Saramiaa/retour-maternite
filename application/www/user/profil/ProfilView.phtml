@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="<?= $wwwUrl ?>/css/profil.css">
 <link rel="stylesheet" href="<?= $wwwUrl ?>/css/register.css">
 
+<section class="flex">
+
 
 <div class="other-cont">
-  <h3>Mon Profil</h3>
+  <h2>Mon Profil</h2>
 
   <p>Pour modifier vos informations, veuillez directement modifier le champs et cliquez sur "Modifier mes informations" une fois terminé  </p>
 
   <form action="<?=$requestUrl?>/user/profil" method="POST">
-
-
     <ul class="register">
       <li>
         <label for="firstname">Votre prénom :</label>
@@ -42,3 +42,29 @@
   </form>
 
 </div>
+
+<div class="other-cont">
+  <h2>Mes reservations à venir</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Jour</th>
+        <th scope="col">Horaire</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($reservation as $reservations) {?>
+        <tr>
+          <td><?=$reservations['Day']?></td>
+          <td><?=$reservations['Hour']?></td>
+          <td>
+            <a href="<?=$requestUrl ?>/user/profil/delete?id=<?=$reservations['Id']?>"> Supprimer</a>
+          </td>
+        </tr>
+      <?php }?>
+    </tbody>
+  </table>
+</div>
+
+</section>

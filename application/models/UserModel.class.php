@@ -21,8 +21,8 @@ class UserModel {
 
       $database->executeSql($sql,
       [
-        $post['firstname'],
-        $post['lastname'],
+        ucfirst($post['firstname']),
+        ucfirst($post['lastname']),
         $post['birthday'],
         $post['email'],
         intval($post['phone']),

@@ -8,3 +8,7 @@ form,
 p {
   text-align: center;
 }
+
+.flex {
+  display: flex;
+}

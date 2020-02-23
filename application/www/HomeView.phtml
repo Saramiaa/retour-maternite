@@ -2,8 +2,11 @@
 <link rel="stylesheet" href="<?= $wwwUrl ?>/css/reservation.css">
 
 
+
 <header class="home">
   <!-- SLICK SLIDER -->
+  <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
+
   <div class="fade slick-slider">
     <div class="slick-me">
       <h1 class="main-title">Retour-Maternite.com</h1><br>
@@ -11,71 +14,78 @@
       <p class="main-title">Nouveaux Nés, Jumeaux</p>
     </div>
     <!-- <div class="slick-me">
-      <p class="main-title">Peut faire ses Nuits !</p><br>
-      <p class="main-title">C'est Possible !</p>
-    </div> -->
-    <div class="slick-me">
-      <p class="main-title">Retour-Maternité.com</p><br>
-      <p class="main-title">Professionnelles Dimplômées</p><br>
-      <p class="main-title">et Expérimentées</p>
-    </div>
-    <div class="slick-me">
-      <p class="main-title">Avec Votre Nouveau Né</p><br>
-      <p class="main-title">Dormir la nuit</p><br>
-      <p class="main-title">C'est Possible !</p>
-    </div>
-    <div class="slick-me">
-      <p class="main-title">Avec Retour-Maternité.com</p><br>
-      <p class="main-title">Nounou de Nuit</p><br>
-      <p class="main-title">Paris Banlieue</p>
-    </div>
+    <p class="main-title">Peut faire ses Nuits !</p><br>
+    <p class="main-title">C'est Possible !</p>
+  </div> -->
+  <div class="slick-me">
+    <p class="main-title">Retour-Maternité.com</p><br>
+    <p class="main-title">Professionnelles Dimplômées</p><br>
+    <p class="main-title">et Expérimentées</p>
   </div>
+  <div class="slick-me">
+    <p class="main-title">Avec Votre Nouveau Né</p><br>
+    <p class="main-title">Dormir la nuit</p><br>
+    <p class="main-title">C'est Possible !</p>
+  </div>
+  <div class="slick-me">
+    <p class="main-title">Avec Retour-Maternité.com</p><br>
+    <p class="main-title">Nounou de Nuit</p><br>
+    <p class="main-title">Paris Banlieue</p>
+  </div>
+</div>
+
+<?php } else { ?>
+  <?php if($_SESSION['role'] === "user"){ ?>
+
+    <section class="welcome">
+      <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
+      <div class="reservation-user">
+        <h3>Reserver votre garde !</h3>
+        <form action="<?=$requestUrl?>/reservation" method="POST">
+      <ul>
+        <li>
+          <label for="date">Selectionnez la date :</label>
+          <input type="date" name="day" id="dateofbirth">
+        </li>
+
+        <li>
+          <label for="hour">Selectionnez un horaire :</label>
+          <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
+          <input class="form-control" type="submit" value="Enregister" id="sub">
+        </li>
+      </ul>
+
+        </form>
+      </div>
+    </section>
+
+  <?php } else {?>
+    <div class="test-admin">
+
+      <p class="admin-part">test admin</p>
+    </div>
+      <?php } ?>
+  <?php } ?>
+
+
 </header>
+
 
 <!-- ACCUEIL USER -->
 <main class="container">
 
   <!-- QUI SOMMES NOUS -->
   <section class="container-text">
-    <div class="main-header">
-        <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
-          <h3>Reservez votre nuit maintenant ! </h3>
-          <div class="reservation">
-            <a href="<?= $requestUrl ?>/user/register">Inscrivez vous !</a>
-            <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
-          </div>
-        <?php } else { ?>
-          <?php if($_SESSION['role'] === "user"){ ?>
-            <section class="test">
-              <p class="bienvenue">Soyez la Bienvenue <em><?= $_SESSION['firstName'] ?></em></p>
-              <div class="reservation-user">
-                <h3>Reserver une garde !</h3>
-                <form action="<?=$requestUrl?>/reservation" method="POST">
-
-                  <label for="date">Je choisi la date à laquelle je souhaiterais réserver une nurse</label>
-                  <input type="date" name="day" id="dateofbirth">
-
-                  <label for="adress">Adresse Postale</label>
-                  <input type="text" name="adress" id="adress">
-
-                  <label for="lieu">Ville</label>
-                  <input type="text" name="city" id="lieu">
-
-                  <label for="hour">Horaire de la garde</label>
-                  <input type="time" name="hour" id="hour"  min="00:00" max="24:00" >
-
-                  <input class="form-control" type="submit" value="Enregister">
-                </form>
-              </div>
-            </section>
-
-          <?php } ?>
-
-          <p>test admin</p>
-        <?php } ?>
+    <?php if(array_key_exists('firstName', $_SESSION) == false) {?>
+        <div class="main-header">
+        <h3>Reservez votre nuit maintenant ! </h3>
+        <div class="reservation">
+          <a href="<?= $requestUrl ?>/user/register">Inscrivez vous !</a>
+          <a href="<?= $requestUrl ?>/user/login" id="Connexion">Connectez vous !</a>
+        </div>
       </div>
-    <div class="container">
-    </div>
+    <?php } ?>
+
     <h2>Qui sommes nous ? <i class="fas fa-feather-alt"></i></h2>
     <hr>
     <p>Diplômées <strong>Infirmières Puéricultrices, Auxiliaires de puériculture</strong> ou encore titulaires d'un CAP Petite Enfance, nous avons suivi un parcours professionnel en milieu hospitalier presque <strong>exclusivement</strong> auprès <strong>des nouveaux nés.</strong> </p>
@@ -87,73 +97,73 @@
 
     <!-- <div class="special-btn">
 
-      <a href="#">Voir portraits <i class="fas fa-baby-carriage"></i></a>
-    </div> -->
+    <a href="#">Voir portraits <i class="fas fa-baby-carriage"></i></a>
+  </div> -->
 
-    <!-- Image Hover -->
-    <div class="overlay-image">
+  <!-- Image Hover -->
+  <div class="overlay-image">
 
-      <img class="image "src="<?= $wwwUrl ?>/images/home/6.jpg" alt="Maman">
-      <p>Lili, Maman de Max <i class="fas fa-venus"></i></p>
+    <img class="image "src="<?= $wwwUrl ?>/images/home/6.jpg" alt="Maman">
+    <p>Lili, Maman de Max <i class="fas fa-venus"></i></p>
 
 
-      <div class="hover">
-        <div class="text"><i class="fas fa-quote-left"></i>
-          Je remercie infiniment toute l'équipe <br> de Retour maternité pour leur <br> professionnalisme <i class="fas fa-quote-right"></i>
-        </div>
+    <div class="hover">
+      <div class="text"><i class="fas fa-quote-left"></i>
+        Je remercie infiniment toute l'équipe <br> de Retour maternité pour leur <br> professionnalisme <i class="fas fa-quote-right"></i>
       </div>
     </div>
+  </div>
 
-  </section>
-  <!-- QUEL EST NOTRE ROLE -->
-  <section class="container-text">
-    <h2>Quel est notre rôle ? <i class="fas fa-baby"></i></h2>
-    <hr>
-    <p>Bien souvent, 3 jours à la maternité sont très courts pour s'adapter à la parentalité.
-      La fatigue accumulée, le stress, l’appréhension du retour à la maison sont un vrai changement dans la vie des parents.</p><br>
-      <p>Le rôle d'une <strong> Nurse de nuit</strong> est de se <strong>rendre à votre domicile</strong>, afin de prendre le relais pour que vous puissiez vous reposer.
-        <strong>Nous amenons les bébés à faire leurs nuits</strong> en respectant leurs <strong>rythmes physiologiques</strong> d'une façon <strong>douce </strong>et <strong>harmonieuse</strong>.</p><br>
-        <p>Nous noterons dans le <strong>journal de bord</strong>, tous les soins prodigués, les horaires des repas de votre nourrisson ainsi que d'éventuelles observations. </p>
-        <p>Nous transmettons tous nos <strong>précieux conseils</strong> et établissons un <strong>suivi personnalisé</strong>suivi personnalisé, pour répondre le plus précisément à vos besoins et ceux de votre bébé.</p>
-        <p>Ainsi, nombreux sont les parents qui font appel à nos services de nursing.</p><br>
-        <p>En tant que <strong>Nurse de Nuit</strong> nous avons également un rôle de conseil et d’accompagnement. Nous vous expliquerons les bons gestes à avoir au quotidien, ainsi que de nombreuses astuces pour bien faire dormir bébé.</p><br>
-        <p>Nous répondons à toutes les questions, sur le sommeil mais aussi l’alimentation et l’hygiène de bébé. Nous aidons donc les parents à être autonomes dans leur nouveau rôle.</p>
-        <p>Nous apparaissons également comme un soutien psychologique envers des parents parfois démunis devant les pleurs constants de bébé. Nous les rassurons et les aidons à se sentir plus confiants.</p>
+</section>
+<!-- QUEL EST NOTRE ROLE -->
+<section class="container-text">
+  <h2>Quel est notre rôle ? <i class="fas fa-baby"></i></h2>
+  <hr>
+  <p>Bien souvent, 3 jours à la maternité sont très courts pour s'adapter à la parentalité.
+    La fatigue accumulée, le stress, l’appréhension du retour à la maison sont un vrai changement dans la vie des parents.</p><br>
+    <p>Le rôle d'une <strong> Nurse de nuit</strong> est de se <strong>rendre à votre domicile</strong>, afin de prendre le relais pour que vous puissiez vous reposer.
+      <strong>Nous amenons les bébés à faire leurs nuits</strong> en respectant leurs <strong>rythmes physiologiques</strong> d'une façon <strong>douce </strong>et <strong>harmonieuse</strong>.</p><br>
+      <p>Nous noterons dans le <strong>journal de bord</strong>, tous les soins prodigués, les horaires des repas de votre nourrisson ainsi que d'éventuelles observations. </p>
+      <p>Nous transmettons tous nos <strong>précieux conseils</strong> et établissons un <strong>suivi personnalisé</strong>suivi personnalisé, pour répondre le plus précisément à vos besoins et ceux de votre bébé.</p>
+      <p>Ainsi, nombreux sont les parents qui font appel à nos services de nursing.</p><br>
+      <p>En tant que <strong>Nurse de Nuit</strong> nous avons également un rôle de conseil et d’accompagnement. Nous vous expliquerons les bons gestes à avoir au quotidien, ainsi que de nombreuses astuces pour bien faire dormir bébé.</p><br>
+      <p>Nous répondons à toutes les questions, sur le sommeil mais aussi l’alimentation et l’hygiène de bébé. Nous aidons donc les parents à être autonomes dans leur nouveau rôle.</p>
+      <p>Nous apparaissons également comme un soutien psychologique envers des parents parfois démunis devant les pleurs constants de bébé. Nous les rassurons et les aidons à se sentir plus confiants.</p>
 
+    </section>
+    <!-- APPEL A NOS SERVICES  -->
+    <section class="container-text">
+      <h2>Quand faire appel à nos services de Nurse ? <i class="fas fa-headset"></i></h2>
+      <hr>
+      <p>Dans l'idéal il est préférable de nous contacter avant la fin de grossesse, afin de mettre en place la meilleure organisation qu'il soit.</p><br>
+      <p>Nous vous offrons un <strong>service de qualité</strong> qui est professionnellement adapté à vos besoins et à vos exigences individuelles.</p>
+      <p>N’hésitez pas à prendre <a href="#"> Contact</a> afin de savoir comment nous pourrons vous aider à tirer le meilleur parti de ces premières semaines si précieuses.</p>
+      <p>Pour plus de renseignements rendez vous dans la rubrique: <a href="#">Prestations</a>.
+      </p><br>
+      <p class="tips"><strong>Bon à savoir :</strong> Les services d’une Nurse Puéricultrice de Nuit peuvent aussi faire l’objet d’un cadeau de naissance. Un présent utile et malin qui fera très plaisir aux parents.</p>
+
+    </section>
+    <section class="container-text">
+      <h2>Une Nurse de nuit s'engage à vous fournir :</h2>
+      <div class="div-flex">
+        <img src="<?= $wwwUrl ?>/images/home/nurse_laura.jpg" alt="nurse">
+        <ul class="pieces-list">
+          <li> <i class="fas fa-paperclip"></i>
+            Son diplôme </li>
+            <li>   <i class="far fa-id-card"></i>  Ses justificatifs d'identités et assurance civile</li>
+            <li><i class="fas fa-medkit"></i>Son attestation de secouriste</li>
+            <li><i class="fas fa-book-medical"></i> Son carnet vaccinal à jour</li>
+            <li><i class="fas fa-balance-scale-right"></i> Son extrait de casier judiciaire vierge</li>
+            <li><i class="fas fa-child"></i> Ses références des familles chez qui elle a travaillé</li>
+          </ul>
+        </div>
+        <p>Toutes les professionnelles ont suivi une formation en Partenariat avec des psychologues agréés, pour intervenir auprès de mamans qui traversent un baby blues, ou encore de mamans porteuses d'un handicap.</p><br>
+        <p class="last-p">L’équipe a également suivi une formation auprès de pédiatres, conseillères en lactation et ostéopathes, pour tout ce qui concerne l'allaitement, la motricité, la psychologie ainsi que le développement neurologique du nouveau né.</p>
       </section>
-      <!-- APPEL A NOS SERVICES  -->
-      <section class="container-text">
-        <h2>Quand faire appel à nos services de Nurse ? <i class="fas fa-headset"></i></h2>
-        <hr>
-        <p>Dans l'idéal il est préférable de nous contacter avant la fin de grossesse, afin de mettre en place la meilleure organisation qu'il soit.</p><br>
-        <p>Nous vous offrons un <strong>service de qualité</strong> qui est professionnellement adapté à vos besoins et à vos exigences individuelles.</p>
-        <p>N’hésitez pas à prendre <a href="#"> Contact</a> afin de savoir comment nous pourrons vous aider à tirer le meilleur parti de ces premières semaines si précieuses.</p>
-        <p>Pour plus de renseignements rendez vous dans la rubrique: <a href="#">Prestations</a>.
-        </p><br>
-        <p class="tips"><strong>Bon à savoir :</strong> Les services d’une Nurse Puéricultrice de Nuit peuvent aussi faire l’objet d’un cadeau de naissance. Un présent utile et malin qui fera très plaisir aux parents.</p>
-
-      </section>
-      <section class="container-text">
-        <h2>Une Nurse de nuit s'engage à vous fournir :</h2>
-        <div class="div-flex">
-          <img src="<?= $wwwUrl ?>/images/home/nurse_laura.jpg" alt="nurse">
-          <ul class="pieces-list">
-            <li> <i class="fas fa-paperclip"></i>
-              Son diplôme </li>
-              <li>   <i class="far fa-id-card"></i>  Ses justificatifs d'identités et assurance civile</li>
-              <li><i class="fas fa-medkit"></i>Son attestation de secouriste</li>
-              <li><i class="fas fa-book-medical"></i> Son carnet vaccinal à jour</li>
-              <li><i class="fas fa-balance-scale-right"></i> Son extrait de casier judiciaire vierge</li>
-              <li><i class="fas fa-child"></i> Ses références des familles chez qui elle a travaillé</li>
-            </ul>
-          </div>
-          <p>Toutes les professionnelles ont suivi une formation en Partenariat avec des psychologues agréés, pour intervenir auprès de mamans qui traversent un baby blues, ou encore de mamans porteuses d'un handicap.</p><br>
-          <p class="last-p">L’équipe a également suivi une formation auprès de pédiatres, conseillères en lactation et ostéopathes, pour tout ce qui concerne l'allaitement, la motricité, la psychologie ainsi que le développement neurologique du nouveau né.</p>
-        </section>
-      </main>
-      <!-- FOOTER PIC -->
-      <div class="pics">
-        <img src="<?= $wwwUrl ?>/images/home/2.jpg" alt="baby1">
-        <img src="<?= $wwwUrl ?>/images/home/4.jpg" alt="baby4">
-        <img src="<?= $wwwUrl ?>/images/home/3.jpg" alt="baby5">
-      </div>
+    </main>
+    <!-- FOOTER PIC -->
+    <div class="pics">
+      <img src="<?= $wwwUrl ?>/images/home/2.jpg" alt="baby1">
+      <img src="<?= $wwwUrl ?>/images/home/4.jpg" alt="baby4">
+      <img src="<?= $wwwUrl ?>/images/home/3.jpg" alt="baby5">
+    </div>
