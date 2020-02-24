@@ -38,28 +38,22 @@
       </li>
       <li class="vertical-border"><a href="<?= $requestUrl ?>">Nurses de nuit</a></li>
       <li class="vertical-border"><a href="<?= $requestUrl ?>/prestation">Prestations</a></li>
-      <li class="vertical-border"><a href="portraits-nounoux-de-nuit-paris.html">Portraits</a></li>
-      <li class="vertical-border"><a href="#">Témoignages</a></li>
-      <li class="vertical-border"><a href="#">Contacts</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
 
-    <ul class="nav-list-side">
       <?php if (array_key_exists('firstName', $_SESSION) == false) {?>
-        <li><a href="<?= $requestUrl ?>/user/login">Connexion</a></li>
-        <li><a href="<?= $requestUrl ?>/user/register">Inscription</a></li>
+        <li><a class="encadrer" href="<?= $requestUrl ?>/user/login">Connexion</a></li>
+        <li><a class="encadrer" href="<?= $requestUrl ?>/user/register">Inscription</a></li>
         <li>
         <?php } else {?>
           <?php if($_SESSION['role'] === "admin"){ ?>
-            <li><a href="<?= $requestUrl ?>/admin" class="admin">Admin</a>
+            <li><a class="encadrer" href="<?= $requestUrl ?>/admin" class="admin">Admin</a></li>
 
-              <a href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a>
+            <li><a class="encadrer" href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a></li>
             <?php } else { ?>
 
-              <li><a href="<?= $requestUrl ?>/user/profil">Mon profil</a> </li>
+              <li><a class="encadrer" href="<?= $requestUrl ?>/user/profil">Mon profil</a> </li>
             <?php } ?>
 
-            <li><a href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
+            <li><a class="encadrer" href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
           <?php } ?>
         </ul>
       </nav>
@@ -78,7 +72,7 @@
           <div class="left-f">
             <p>Pendant votre congé maternité vous pouvez faire appels à nos services de nurse de nuit.</p>
             <p>Que vous attendiez un bébé ou des jumeaux nous vous accompagnons dés le retour de la maternité afin de vous apporter tous les conseils que nous connaissons sur les nourrissons.</p><br>
-            <a href="#">Utilisation des cookies</a>
+        
           </div>
 
           <article class="middle-f">

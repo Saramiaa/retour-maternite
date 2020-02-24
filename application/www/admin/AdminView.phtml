@@ -30,7 +30,7 @@
         <td><?=$user['Birthday']?></td>
         <td>(0)<?=$user['Phone']?></td>
         <td><?=$user['Adress']?> <br>  <?=$user['Zip']?> <?=$user['City']?> <br> <?=$user['Country']?> </td>
-        <td><?=$user['CreationTimeStamp']?></td>
+        <td><?=date('d/m/Y', strtotime($user['CreationTimeStamp']))?></td>
         <td>
           <a href="<?=$requestUrl ?>/admin/delete?id=<?=$user['id']?>"> Supprimer</a>
         </td>

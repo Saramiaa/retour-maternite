@@ -26,7 +26,7 @@ class RegisterController
 
         $user->addUser($_POST);
 
-        // $http->redirectTo('/user/login');
+        $http->redirectTo('/user/login');
 
     }
 }

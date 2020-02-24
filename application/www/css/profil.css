@@ -12,3 +12,12 @@ p {
 .flex {
   display: flex;
 }
+
+.other-cont {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-color: #fdefe9ad ;
+  border-radius: 4px;
+}

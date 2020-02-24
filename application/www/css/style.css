@@ -129,6 +129,7 @@ ul a:hover {
   right: 0;
   background-color: #FDEFE9;
   z-index: 1;
+  padding: 28px;
 }
 
 .nav-logo {
@@ -158,7 +159,6 @@ ul a:hover {
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-left: auto;
-  margin-right: auto;
   align-items: flex-end;
   width: 70%;
 }
@@ -182,7 +182,18 @@ ul a:hover {
   padding: 5px;
   border: solid 1px #5C5C5D;;
   text-align: center;
+}
 
+.encadrer {
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #8b0026c7;
+  color: antiquewhite;
+}
+
+.encadrer:hover {
+  color: white;
 }
 
 /* SLIDER -------------------------------------------------------------------------------------------------------------*/
@@ -214,6 +225,11 @@ ul a:hover {
 }
 
 /* BODY ----------------------------------------------------*/
+
+.admin-part {
+  background-color: #faebd7a6;
+  padding: 10px;
+}
 
 .main-header {
 
