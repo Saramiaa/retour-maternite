@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Retour Maternité</title>
 
@@ -40,6 +41,7 @@
       <li class="vertical-border"><a href="<?= $requestUrl ?>/prestation">Prestations</a></li>
 
       <?php if (array_key_exists('firstName', $_SESSION) == false) {?>
+        <div class="list-flex">
         <li><a class="encadrer" href="<?= $requestUrl ?>/user/login">Connexion</a></li>
         <li><a class="encadrer" href="<?= $requestUrl ?>/user/register">Inscription</a></li>
         <li>
@@ -54,6 +56,7 @@
             <?php } ?>
 
             <li><a class="encadrer" href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
+          </div>
           <?php } ?>
         </ul>
       </nav>
@@ -72,7 +75,7 @@
           <div class="left-f">
             <p>Pendant votre congé maternité vous pouvez faire appels à nos services de nurse de nuit.</p>
             <p>Que vous attendiez un bébé ou des jumeaux nous vous accompagnons dés le retour de la maternité afin de vous apporter tous les conseils que nous connaissons sur les nourrissons.</p><br>
-        
+
           </div>
 
           <article class="middle-f">

@@ -224,6 +224,11 @@ ul a:hover {
   color: #8b0026;
 }
 
+.list-flex {
+  display: flex;
+  flex-direction: row;
+}
+
 /* BODY ----------------------------------------------------*/
 
 .admin-part {
@@ -395,7 +400,7 @@ h2 {
 /* PICS FOOTER ------------------------------------ */
 
 .pics img {
-  width: 300px;
+  width: 150px;
   border-radius: 12px;
 }
 
@@ -494,4 +499,67 @@ hr {
 
 .transparent-footer {
   opacity: 0.8;
+}
+
+@media (max-width: 993px) {
+
+.main-header {
+  left: 0;
+}
+
+.div-flex img {
+  width: 183px;
+}
+
+}
+
+@media (max-width: 819px) {
+
+.main-header {
+  top: -242px;
+  padding-top: 5px;
+}
+
+.main-title {
+  font-size: 40px;
+}
+
+.main-header h3 {
+  margin-top: 0;
+}
+
+.nav-list {
+  margin-right: auto;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.list-flex {
+  display: flex;
+  margin-top: 14px;
+}
+
+.nav-bar-header {
+  padding-bottom: 10px;
+}
+
+.div-flex img {
+  width: 100px;
+}
+
+}
+
+@media (max-width: 742px) {
+
+.nav-logo p {
+  left: -5px;
+  top: 52px;
+  font-size: 14px;
+}
+
+}
+
+@media (max-width: 561px) {
+
 }
