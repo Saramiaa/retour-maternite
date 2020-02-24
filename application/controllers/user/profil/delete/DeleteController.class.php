@@ -24,7 +24,6 @@ class DeleteController
     $http->redirectTo('/user/profil');
 
 
-
   }
 
 

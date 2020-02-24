@@ -29,7 +29,7 @@
         <td><?=$reservation['Day']?></td>
         <td><?=$reservation['Email']?></td>
         <td>
-          <button type="button" name="button">Supprimer</button>
+          <a href="<?=$requestUrl ?>/admin/reservation/delete?id=<?=$reservation['Id']?>"> Supprimer</a>
         </td>
       </tr>
     <?php }?>

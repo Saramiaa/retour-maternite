@@ -23,7 +23,7 @@
   <tbody>
     <?php foreach($users as $user) {?>
       <tr>
-        <td scope="row"><?=$user['Id']?></td>
+        <td scope="row"><?=$user['id']?></td>
         <td><?=$user['LastName']?></td>
         <td><?=$user['FirstName']?></td>
         <td><?=$user['Email']?></td>
@@ -32,7 +32,7 @@
         <td><?=$user['Adress']?> <br>  <?=$user['Zip']?> <?=$user['City']?> <br> <?=$user['Country']?> </td>
         <td><?=$user['CreationTimeStamp']?></td>
         <td>
-          <button type="button" name="button">Supprimer</button>
+          <a href="<?=$requestUrl ?>/admin/delete?id=<?=$user['id']?>"> Supprimer</a>
         </td>
       </tr>
     <?php }?>

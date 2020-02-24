@@ -21,7 +21,7 @@ class ReservationModel {
       $database = new Database();
 
       $sql = 'SELECT * FROM `reservation`
-      INNER JOIN users ON users.Id = reservation.User_Id';
+      INNER JOIN users ON users.id = reservation.User_Id';
 
       return $database->query($sql, []);
     }

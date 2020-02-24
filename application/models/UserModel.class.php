@@ -6,7 +6,7 @@ class UserModel {
 
     $database = new Database();
 
-    $user = $database -> queryOne('SELECT Id FROM users WHERE Email =?', [$post['email'] ]);
+    $user = $database -> queryOne('SELECT id FROM users WHERE Email =?', [$post['email'] ]);
 
     $hashPassword = $this->hashPassword($post['password']);
 
@@ -60,7 +60,7 @@ class UserModel {
       // var_dump($user);
 
       if( $user !== false && $this->verifyPassword($post['password'], $user['Password']) == true ) {
-        $_SESSION['id'] = $user['Id'];
+        $_SESSION['id'] = $user['id'];
         $_SESSION['email'] = $user['Email'];
         $_SESSION['firstName'] = $user['FirstName'];
         $_SESSION['lastName'] = $user['LastName'];
@@ -89,7 +89,7 @@ class UserModel {
 
     public function changeUserProfil($post, $id) {
       $database = new Database();
-      $sql = 'UPDATE users SET FirstName=?, LastName=?, Email=?, Adress=?, City=?, Zip=? WHERE Id=?';
+      $sql = 'UPDATE users SET FirstName=?, LastName=?, Email=?, Adress=?, City=?, Zip=? WHERE id=?';
 
       $database->executeSql($sql,
       [
@@ -105,9 +105,19 @@ class UserModel {
 
     public function getOneUser($id) {
       $database = new Database();
-      $sql = 'SELECT * FROM users WHERE Id = ?';
+      $sql = 'SELECT * FROM users WHERE id = ?';
 
       return $database->queryOne($sql, [$id]);
+    }
+
+    public function deleteUser($id) {
+
+      $database = new Database();
+
+      $sql = 'DELETE FROM users WHERE id=?';
+
+      $database->executeSql($sql, [ $id ]);
+
     }
 
 

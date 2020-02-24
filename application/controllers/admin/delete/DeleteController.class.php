@@ -12,11 +12,11 @@ class DeleteController
 
       $id = $_GET['id'];
 
-      $reservationModel = new ReservationModel();
+      $userModel = new UserModel();
 
-      $reservationModel->deleteReservation($id);
+      $userModel->deleteUser($id);
 
-      $http->redirectTo('/admin/reservation');
+      $http->redirectTo('/admin');
 
     }
 

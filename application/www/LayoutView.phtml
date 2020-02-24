@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Retour Maternité</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Retour Maternité</title>
 
-    <!--  liens externe -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!--  liens externe -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
-    <!-- Feuilles de styles de l'application -->
+  <!-- Feuilles de styles de l'application -->
 
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize.css">
-    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+  <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize.css">
+  <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
 
-    <!-- Librairie jQuery -->
+  <!-- Librairie jQuery -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <!-- JavaScript de l'application -->
-    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+  <!-- JavaScript de l'application -->
+  <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
 </head>
 <body>
-<!-- En-tête commune -->
+  <!-- En-tête commune -->
 
-<nav class="nav-bar-header">
-  <ul class="nav-list">
-    <li>
-      <div class="nav-logo">
-        <img src="<?= $wwwUrl ?>/images/logo.png" alt="logo">
-        <p><span  class="color-logo">R</span>etour-<span class="color-logo">M</span>aternité</p>
-      </div>
-    </li>
-    <li class="vertical-border"><a href="<?= $requestUrl ?>">Nurses de nuit</a></li>
-    <li class="vertical-border"><a href="<?= $requestUrl ?>/prestation">Prestations</a></li>
-    <li class="vertical-border"><a href="portraits-nounoux-de-nuit-paris.html">Portraits</a></li>
-    <li class="vertical-border"><a href="#">Témoignages</a></li>
-    <li class="vertical-border"><a href="#">Contacts</a></li>
-    <li><a href="#">Blog</a></li>
-  </ul>
+  <nav class="nav-bar-header">
+    <ul class="nav-list">
+      <li>
+        <div class="nav-logo">
+          <img src="<?= $wwwUrl ?>/images/logo.png" alt="logo">
+          <p><span  class="color-logo">R</span>etour-<span class="color-logo">M</span>aternité</p>
+        </div>
+      </li>
+      <li class="vertical-border"><a href="<?= $requestUrl ?>">Nurses de nuit</a></li>
+      <li class="vertical-border"><a href="<?= $requestUrl ?>/prestation">Prestations</a></li>
+      <li class="vertical-border"><a href="portraits-nounoux-de-nuit-paris.html">Portraits</a></li>
+      <li class="vertical-border"><a href="#">Témoignages</a></li>
+      <li class="vertical-border"><a href="#">Contacts</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
 
-  <ul class="nav-list-side">
-  <?php if (array_key_exists('firstName', $_SESSION) == false) {?>
-    <li><a href="<?= $requestUrl ?>/user/login">Connexion</a></li>
-    <li><a href="<?= $requestUrl ?>/user/register">Inscription</a></li>
-    <li>
-      <?php } else {?>
-        <?php if($_SESSION['role'] === "admin"){ ?>
-      <li><a href="<?= $requestUrl ?>/admin" class="admin">Admin</a>
+    <ul class="nav-list-side">
+      <?php if (array_key_exists('firstName', $_SESSION) == false) {?>
+        <li><a href="<?= $requestUrl ?>/user/login">Connexion</a></li>
+        <li><a href="<?= $requestUrl ?>/user/register">Inscription</a></li>
+        <li>
+        <?php } else {?>
+          <?php if($_SESSION['role'] === "admin"){ ?>
+            <li><a href="<?= $requestUrl ?>/admin" class="admin">Admin</a>
 
-      <a href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a>
-      <?php } ?>
+              <a href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a>
+            <?php } else { ?>
 
-      <li><a href="<?= $requestUrl ?>/user/profil">Mon profil</a> </li>
-      <li><a href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
-    <?php } ?>
-  </ul>
-</nav>
-<!-- Interface utilisateur -->
+              <li><a href="<?= $requestUrl ?>/user/profil">Mon profil</a> </li>
+            <?php } ?>
+
+            <li><a href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
+          <?php } ?>
+        </ul>
+      </nav>
+      <!-- Interface utilisateur -->
 
 
-<main>
-    <!-- Affichage du template lié à la vue -->
-    <?php include $this->viewData['template'] ?>
-</main>
+      <main>
+        <!-- Affichage du template lié à la vue -->
+        <?php include $this->viewData['template'] ?>
+      </main>
 
-<!-- Pied de page commun -->
-<footer>
-  <a href="#"><i class="fas fa-arrow-circle-up"></i></a>
-  <section class="container-footer">
-    <div class="left-f">
-      <p>Pendant votre congé maternité vous pouvez faire appels à nos services de nurse de nuit.</p>
-      <p>Que vous attendiez un bébé ou des jumeaux nous vous accompagnons dés le retour de la maternité afin de vous apporter tous les conseils que nous connaissons sur les nourrissons.</p><br>
-      <a href="#">Utilisation des cookies</a>
-    </div>
+      <!-- Pied de page commun -->
+      <footer>
+        <a href="#"><i class="fas fa-arrow-circle-up"></i></a>
+        <section class="container-footer">
+          <div class="left-f">
+            <p>Pendant votre congé maternité vous pouvez faire appels à nos services de nurse de nuit.</p>
+            <p>Que vous attendiez un bébé ou des jumeaux nous vous accompagnons dés le retour de la maternité afin de vous apporter tous les conseils que nous connaissons sur les nourrissons.</p><br>
+            <a href="#">Utilisation des cookies</a>
+          </div>
 
-      <article class="middle-f">
-        <h3>Nous contacter</h3>
-        <a href="#"><i class="fab fa-facebook"></i></a>
+          <article class="middle-f">
+            <h3>Nous contacter</h3>
+            <a href="#"><i class="fab fa-facebook"></i></a>
 
-        <p>Paris / Banlieue / Etranger</p>
-        <strong>Soutenue par l'association Jumeaux et plus ©</strong>
-      </article>
+            <p>Paris / Banlieue / Etranger</p>
+            <strong>Soutenue par l'association Jumeaux et plus ©</strong>
+          </article>
 
-      <div class="right-f">
-        <a href="mailto:retour-maternite@outlook.fr"><i class="fas fa-envelope"></i>  Retour-maternite@outlook.fr</a>
-        <a href="tel:+33633687410"><i class="fas fa-phone-alt "></i>  +33 6 33 68 74 10</a>
-        <a href="tel:+33659970268"><i class="fas fa-phone-alt"></i>  +33 6 59 97 02 68</a><br>
-        <a href="#">Mentions légales</a>
-      </div>
-  </section>
-</footer>
+          <div class="right-f">
+            <a href="mailto:retour-maternite@outlook.fr"><i class="fas fa-envelope"></i>  Retour-maternite@outlook.fr</a>
+            <a href="tel:+33633687410"><i class="fas fa-phone-alt "></i>  +33 6 33 68 74 10</a>
+            <a href="tel:+33659970268"><i class="fas fa-phone-alt"></i>  +33 6 59 97 02 68</a><br>
+            <a href="#">Mentions légales</a>
+          </div>
+        </section>
+      </footer>
 
-<!-- Code principal JavaScript de l'application -->
-<script src="<?= $wwwUrl ?>/js/main.js"></script>
-<!-- Script -->
-<script type="text/javascript" src="<?= $wwwUrl ?>/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="<?= $wwwUrl ?>/js/slick.min.js"></script>
+      <!-- Code principal JavaScript de l'application -->
+      <script src="<?= $wwwUrl ?>/js/main.js"></script>
+      <!-- Script -->
+      <script type="text/javascript" src="<?= $wwwUrl ?>/js/jquery-3.4.1.js"></script>
+      <script type="text/javascript" src="<?= $wwwUrl ?>/js/slick.min.js"></script>
 
-</body>
-</html>
+    </body>
+    </html>
