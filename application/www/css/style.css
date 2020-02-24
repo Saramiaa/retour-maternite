@@ -231,6 +231,10 @@ ul a:hover {
   padding: 10px;
 }
 
+.title {
+  margin-top: 140px;
+}
+
 .main-header {
 
     background-color: rgba(255, 126, 120, 0.72);

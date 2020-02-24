@@ -27,7 +27,7 @@
         <td><?=$user['LastName']?></td>
         <td><?=$user['FirstName']?></td>
         <td><?=$user['Email']?></td>
-        <td><?=$user['Birthday']?></td>
+        <td><?=date('d/m/Y', strtotime($user['Birthday']))?></td>
         <td>(0)<?=$user['Phone']?></td>
         <td><?=$user['Adress']?> <br>  <?=$user['Zip']?> <?=$user['City']?> <br> <?=$user['Country']?> </td>
         <td><?=date('d/m/Y', strtotime($user['CreationTimeStamp']))?></td>
