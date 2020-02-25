@@ -42,22 +42,26 @@
 
       <?php if (array_key_exists('firstName', $_SESSION) == false) {?>
         <div class="list-flex">
+
         <li><a class="encadrer" href="<?= $requestUrl ?>/user/login">Connexion</a></li>
         <li><a class="encadrer" href="<?= $requestUrl ?>/user/register">Inscription</a></li>
-        <li>
+
         <?php } else {?>
           <?php if($_SESSION['role'] === "admin"){ ?>
+          <div class="list-flex">
             <li><a class="encadrer" href="<?= $requestUrl ?>/admin" class="admin">Admin</a></li>
 
             <li><a class="encadrer" href="<?= $requestUrl ?>/admin/reservation" class="admin">Agenda</a></li>
-            <?php } else { ?>
 
+            <?php } else { ?>
+            <div class="list-flex">
               <li><a class="encadrer" href="<?= $requestUrl ?>/user/profil">Mon profil</a> </li>
+
             <?php } ?>
 
-            <li><a class="encadrer" href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li>
-          </div>
+            <li><a class="encadrer" href="<?= $requestUrl ?>/user/logout">Déconnexion</a></li></div>
           <?php } ?>
+
         </ul>
       </nav>
       <!-- Interface utilisateur -->
@@ -87,7 +91,7 @@
           </article>
 
           <div class="right-f">
-            <a href="mailto:retour-maternite@outlook.fr"><i class="fas fa-envelope"></i>  Retour-maternite@outlook.fr</a>
+            <a href="mailto:retour-maternite@outlook.fr" id="maill"><i class="fas fa-envelope"></i>  Retour-maternite@outlook.fr</a>
             <a href="tel:+33633687410"><i class="fas fa-phone-alt "></i>  +33 6 33 68 74 10</a>
             <a href="tel:+33659970268"><i class="fas fa-phone-alt"></i>  +33 6 59 97 02 68</a><br>
             <a href="#">Mentions légales</a>

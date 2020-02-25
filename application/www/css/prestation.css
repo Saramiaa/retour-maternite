@@ -34,7 +34,7 @@ body {
 }
 
 .inside h2 {
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
   padding: 10px;
   border: 1px solid #8b0026;
@@ -46,4 +46,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+}
+
+@media (max-width: 681px) {
+  .inside h2 {
+    font-size: 12px;
+  }
 }

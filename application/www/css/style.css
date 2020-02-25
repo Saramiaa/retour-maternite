@@ -562,6 +562,10 @@ hr {
   align-items: center;
 }
 
+.container{
+  width: 90%;
+}
+
 }
 
 @media (max-width: 561px) {
@@ -575,6 +579,14 @@ hr {
 
 .div-flex img{
   display: none;
+}
+
+#maill {
+  overflow: auto;
+}
+
+.left-f {
+  width: 100%;
 }
 
 }
